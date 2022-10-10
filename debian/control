@@ -1,0 +1,29 @@
+Source: libdata-section-simple-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>,
+           Xavier Guimard <x.guimard@free.fr>
+Section: perl
+Rules-Requires-Root: no
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 10)
+Build-Depends-Indep: libtest-requires-perl,
+                     perl
+Standards-Version: 4.1.3
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libdata-section-simple-perl.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-perl/packages/libdata-section-simple-perl.git
+Homepage: https://metacpan.org/release/Data-Section-Simple
+
+Package: libdata-section-simple-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Description: Perl module for reading data from __DATA__ section of the file
+ Data::Section::Simple is a simple module to extract data 
+ from __DATA__ section of the file.
+ .
+ This module does not implement caching (yet) which means 
+ in every get_data_section or get_data_section($name) this 
+ module seeks and re-reads the data section. If you want 
+ to avoid doing so for the better performance, you should 
+ implement caching in your own caller code.
